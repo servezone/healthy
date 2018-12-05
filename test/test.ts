@@ -8,4 +8,8 @@ tap.test('should produce a healthy class', async () => {
   expect(testHealthy).to.be.instanceOf(healthy.Healthy);
 })
 
+tap.test('should create a health check', async () => {
+  testHealthy.doHealthCheck();
+})
+
 tap.start();

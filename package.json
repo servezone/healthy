@@ -10,7 +10,8 @@
   "scripts": {
     "test": "(tstest test/)",
     "build": "(tsbuild)",
-    "format": "(gitzone format)"
+    "format": "(gitzone format)",
+    "direct": "(tsrun test/test.ts)"
   },
   "devDependencies": {
     "@gitzone/tsbuild": "^2.0.22",

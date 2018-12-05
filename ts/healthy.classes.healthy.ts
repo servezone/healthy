@@ -1,6 +1,6 @@
 import * as plugins from './healthy.plugins';
 
-import { IHealthy }
+import { IHealthyPackage } from './healthy.interfaces.HealthyPackage';
 
 export interface IHealthyOptions {
   timeout?: number;
@@ -32,14 +32,13 @@ export class Healthy {
     const timeout = new plugins.smarttime.Timer(2000);
     timeout.completed.then(() => {
       console.log('health check timed out')
-      process.exit(1)
+      process.exit(1);
     })
     timeout.start()
 
     const response = await plugins.smartrequest.getJson('http://localhost:8765');
     timeout.reset(); // health chck completed in time, so lets stop here.
 
-    const reponseHealthPackage
-
+    const reponseHealthPackage: IHealthyPackage = response.body;
   };
 }
