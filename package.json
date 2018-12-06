@@ -1,6 +1,6 @@
 {
   "name": "@gitzone/healthy",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "description": "a health checker for inside docker",
   "main": "dist/index.js",
