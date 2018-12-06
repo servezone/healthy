@@ -1,5 +1,5 @@
 {
-  "name": "@gitzone/healthy",
+  "name": "@servezone/healthy",
   "version": "1.0.6",
   "private": false,
   "description": "a health checker for inside docker",
