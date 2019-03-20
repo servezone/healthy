@@ -29,9 +29,7 @@ export class Healthy {
     });
     timeout.start();
 
-    const response = await plugins.smartrequest.getJson(
-      'http://localhost:8765'
-    );
+    const response = await plugins.smartrequest.getJson('http://localhost:8765');
     timeout.reset(); // health chck completed in time, so lets stop here.
 
     const responseHealthPackage: IHealthyPackage = response.body;
@@ -40,14 +38,12 @@ export class Healthy {
     let everythingOk = true;
 
     // lets perform health checks
-    
+
     // selfAnalysis
     if (responseHealthPackage.serviceSelfAnalysis !== 'healthy') {
       logger.log(
         'warn',
-        `selfAnalysis of the serverse states ${
-          responseHealthPackage.serviceSelfAnalysis
-        }!`
+        `selfAnalysis of the serverse states ${responseHealthPackage.serviceSelfAnalysis}!`
       );
       if (responseHealthPackage.serviceSelfAnalysis === 'unhealthy') {
         logger.log('warn', 'Therefore the healthcheck will fail!');
@@ -56,6 +52,5 @@ export class Healthy {
     }
 
     // ressourceusage
-    
   }
 }

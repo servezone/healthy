@@ -4,10 +4,4 @@ import * as smartlogDestinationReceiver from '@pushrocks/smartlog-destination-re
 import * as smartrequest from '@pushrocks/smartrequest';
 import * as smarttime from '@pushrocks/smarttime';
 
-export {
-  smartcli,
-  smartlog,
-  smartlogDestinationReceiver,
-  smartrequest,
-  smarttime,
-}
+export { smartcli, smartlog, smartlogDestinationReceiver, smartrequest, smarttime };

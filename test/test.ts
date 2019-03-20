@@ -6,10 +6,10 @@ let testHealthy: healthy.Healthy;
 tap.test('should produce a healthy class', async () => {
   testHealthy = new healthy.Healthy(new healthy.HealthyConfig());
   expect(testHealthy).to.be.instanceOf(healthy.Healthy);
-})
+});
 
 tap.test('should create a health check', async () => {
   testHealthy.doHealthCheck();
-})
+});
 
 tap.start();

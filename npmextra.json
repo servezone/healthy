@@ -2,5 +2,15 @@
   "npmci": {
     "npmGlobalTools": [],
     "npmAccessLevel": "public"
+  },
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "servezone",
+      "gitrepo": "healthy",
+      "shortDescription": "a health checker for inside docker",
+      "npmPackagename": "@servezone/healthy",
+      "license": "MIT"
+    }
   }
 }
