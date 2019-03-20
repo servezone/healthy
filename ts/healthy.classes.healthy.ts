@@ -9,7 +9,7 @@ import { IHealthyPackage } from './healthy.interfaces.HealthyPackage';
  * expects a HealthyPackage on port 8765
  */
 export class Healthy {
-  options: HealthyConfig;
+  private options: HealthyConfig;
 
   constructor(configArg: HealthyConfig) {
     this.options = configArg;
@@ -18,14 +18,15 @@ export class Healthy {
   /**
    * performs a health check
    */
-  async doHealthCheck() {
+  public async doHealthCheck(): Promise<IHealthyPackage> {
     const timeout = new plugins.smarttime.Timer(2000);
+    let timedOut = false;
     timeout.completed.then(() => {
       logger.log(
         'warn',
         'health check timed out! Therefore the service is considered unhealthy and healthcheck will fail!'
       );
-      process.exit(1);
+      timedOut = true;
     });
     timeout.start();
 
@@ -52,5 +53,21 @@ export class Healthy {
     }
 
     // ressourceusage
+
+    const healthyPackage: IHealthyPackage = {
+      cpuUsage: 0.10,
+      gcRequested: true,
+      timedOut, // short form that uses the value from above
+      memoryUsage: 0,
+      serviceSelfAnalysis: 'healthy'
+    };
+    return healthyPackage;
+  }
+
+  public async isHealthy (): Promise<boolean> {
+    const result = this.doHealthCheck();
+
+    // TODO: determine some rules for what is actually subject to failure
+    return true;
   }
 }
