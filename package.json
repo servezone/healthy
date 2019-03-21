@@ -1,6 +1,6 @@
 {
   "name": "@servezone/healthy",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": false,
   "description": "a health checker for inside docker",
   "main": "dist/index.js",
