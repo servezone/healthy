@@ -55,7 +55,7 @@ export class Healthy {
     // ressourceusage
 
     const healthyPackage: IHealthyPackage = {
-      cpuUsage: 0.10,
+      cpuUsage: 0.1,
       gcRequested: true,
       timedOut, // short form that uses the value from above
       memoryUsage: 0,
@@ -64,7 +64,7 @@ export class Healthy {
     return healthyPackage;
   }
 
-  public async isHealthy (): Promise<boolean> {
+  public async isHealthy(): Promise<boolean> {
     const result = this.doHealthCheck();
 
     // TODO: determine some rules for what is actually subject to failure
