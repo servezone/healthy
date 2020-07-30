@@ -59,7 +59,7 @@ export class Healthy {
       gcRequested: true,
       timedOut, // short form that uses the value from above
       memoryUsage: 0,
-      serviceSelfAnalysis: 'healthy'
+      serviceSelfAnalysis: 'healthy',
     };
     return healthyPackage;
   }

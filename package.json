@@ -3,8 +3,8 @@
   "version": "1.0.11",
   "private": false,
   "description": "a health checker for inside docker",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist_ts/index.js",
+  "typings": "dist_ts/index.d.ts",
   "author": "Lossless GmbH",
   "license": "MIT",
   "bin": {
@@ -12,23 +12,36 @@
   },
   "scripts": {
     "test": "(tstest test/)",
-    "build": "(tsbuild)",
-    "format": "(gitzone format)",
-    "direct": "(tsrun test/test.ts)"
+    "build": "(tsbuild --web)"
   },
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.1.3",
-    "@gitzone/tstest": "^1.0.18",
-    "@pushrocks/tapbundle": "^3.0.7",
-    "@types/node": "^10.11.7",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0"
+    "@gitzone/tsbuild": "^2.1.24",
+    "@gitzone/tstest": "^1.0.43",
+    "@pushrocks/tapbundle": "^3.2.9",
+    "@types/node": "^14.0.27",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0"
   },
   "dependencies": {
-    "@pushrocks/smartcli": "^3.0.6",
-    "@pushrocks/smartlog": "^2.0.9",
-    "@pushrocks/smartlog-destination-receiver": "^1.0.4",
-    "@pushrocks/smartrequest": "^1.1.14",
-    "@pushrocks/smarttime": "^3.0.5"
-  }
+    "@pushrocks/smartcli": "^3.0.12",
+    "@pushrocks/smartlog": "^2.0.35",
+    "@pushrocks/smartlog-destination-receiver": "^1.0.8",
+    "@pushrocks/smartrequest": "^1.1.47",
+    "@pushrocks/smarttime": "^3.0.24"
+  },
+  "browserslist": [
+    "last 1 chrome versions"
+  ],
+  "files": [
+    "ts/**/*",
+    "ts_web/**/*",
+    "dist/**/*",
+    "dist_*/**/*",
+    "dist_ts/**/*",
+    "dist_ts_web/**/*",
+    "assets/**/*",
+    "cli.js",
+    "npmextra.json",
+    "readme.md"
+  ]
 }

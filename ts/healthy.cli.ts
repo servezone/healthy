@@ -4,7 +4,7 @@ import { HealthyConfig } from './healthy.classes.healthyconfig';
 
 const healthyCli = new plugins.smartcli.Smartcli();
 
-healthyCli.standardTask().subscribe(async argvArg => {
+healthyCli.standardTask().subscribe(async (argvArg) => {
   const healthyConfig = new HealthyConfig();
   const healthy = new Healthy(healthyConfig);
   if (await healthy.isHealthy()) {

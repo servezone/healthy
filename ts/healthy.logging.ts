@@ -7,7 +7,7 @@ export const logger = new plugins.smartlog.Smartlog({
     containerName: '',
     environment: 'production',
     runtime: 'node',
-    zone: ''
+    zone: '',
   },
-  minimumLogLevel: 'info'
+  minimumLogLevel: 'info',
 });
